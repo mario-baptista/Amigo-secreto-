@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amiga Secreta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .morse {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+        .hidden-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Queres saber quem eu sou? Descobre a Palavra Secreta!</h1>
+    <p class="morse">..-. . .-.. .. --.. / -. .- - .- .-..</p> <!-- Mensagem em Morse -->
+    <p>Dica: É muito fácil!</p>
+    <input type="text" id="answer" placeholder="Digite a resposta">
+    <button onclick="checkAnswer()">Enviar</button>
+    <p class="hidden-message" id="successMessage">Parabéns! Continuo a ser a tua amiga secreta.</p>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = "feliz natal"; // Substituir pela palavra secreta
+            const userAnswer = document.getElementById('answer').value.toLowerCase();
+
+            if (userAnswer === correctAnswer) {
+                document.getElementById('successMessage').style.display = 'block';
+            } else {
+                alert('Resposta incorreta! Tente novamente.');
+            }
+        }
+    </script>
+</body>
+</html>
